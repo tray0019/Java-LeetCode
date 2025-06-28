@@ -18,4 +18,12 @@ Documenting and Solving LeetCode puzzles.
 |-----------------------------|----------|----------|
 
 | 1480. Running Sum of 1D Array | Solve    | 2 hours  |
+<<<<<<< HEAD
 >>>>>>> abc4b06 (Initialize repository and added my Leetcode puzzles)
+=======
+
+
+| Title                        	| Progress | Estimate |
+|-------------------------------|----------|----------|
+| 1480. Running Sum of 1D Array | Solve    | 2 hours  |
+>>>>>>> f6427ca (Update README.md)
