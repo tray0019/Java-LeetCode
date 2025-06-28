@@ -14,3 +14,8 @@ Documenting and Solving LeetCode puzzles.
 |-----------------------------|----------|----------|
 
 | 1480. Running Sum of 1D Array | Solve    | 2 hours  |
+
+
+| Title                        	| Progress | Estimate |
+|-------------------------------|----------|----------|
+| 1480. Running Sum of 1D Array | Solve    | 2 hours  |
