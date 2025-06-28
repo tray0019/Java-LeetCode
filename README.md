@@ -1,29 +1,8 @@
-<<<<<<< HEAD
-# Java-LeetCode
-LeetCode puzzle solve 🤔🕵️
-=======
+# Java LeetCode 🤔🕵️
 
-# Java LeetCode 
+**Description**  
+Documenting and solving LeetCode puzzles.
 
-**Description**
-Documenting and Solving LeetCode puzzles.
-
-
-
-
-
-
-| Title                        | Progress | Estimate |
-
-|-----------------------------|----------|----------|
-
-| 1480. Running Sum of 1D Array | Solve    | 2 hours  |
-<<<<<<< HEAD
->>>>>>> abc4b06 (Initialize repository and added my Leetcode puzzles)
-=======
-
-
-| Title                        	| Progress | Estimate |
-|-------------------------------|----------|----------|
-| 1480. Running Sum of 1D Array | Solve    | 2 hours  |
->>>>>>> f6427ca (Update README.md)
+| Title                         | Progress | Estimate |
+|------------------------------|----------|----------|
+| 1480. Running Sum of 1D Array | Solved   | 2 hours  |
