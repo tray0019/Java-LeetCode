@@ -1,3 +1,10 @@
+/**
+ * @author Rustom
+ * -- Easy Level
+ * @since June 27, 2025
+ * -- Estimate time 2hours
+ */
+
 /*
  * This was a leetcode question in which I have
  * solve!
@@ -6,7 +13,6 @@
  * almost took me 2 hours.
  */
 package LeetCode;
-
 
 class RunningSumof1DArray_1480 {
 
