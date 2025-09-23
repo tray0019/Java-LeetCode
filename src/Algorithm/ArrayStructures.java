@@ -10,7 +10,7 @@ public class ArrayStructures {
 	private int arraySize = 10;
 	
 	//A method to generate number of array fro 10 to 19
-	private void generateRandomArray() {
+	public void generateRandomArray() {
 		for(int i = 0; i < arraySize; i++) {
 			theArray[i] = (int)(Math.random()*10)+10;
 			
@@ -67,6 +67,9 @@ public class ArrayStructures {
 		
 	}
 	
+	/*
+	 * Search if a value is within the array index
+	 */
 	public String linearSearchForValue(int value) {
 		boolean valueInArray = false;
 		String indexWithValue ="";
@@ -76,7 +79,7 @@ public class ArrayStructures {
 		for(int i = 0; i < arraySize; i++) {
 			if(theArray[i] == value) {
 				valueInArray = true;
-				System.out.println(i+" : )");
+				System.out.println(i+" ");
 				//indexWithValue = indexWithValue+i+ " ";
 			}
 		}
