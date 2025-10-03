@@ -18,19 +18,23 @@ public class TwoPointers {
 		System.out.println("Is mom a palindrome? "+test2);
 		System.out.println("-----------------------------");
 		
-		int arr[] = {1,2,3,2,5};
+		int arr[] = {1,2,2,4,4,5};
+		System.out.println(Arrays.toString(arr));
+		System.out.println();
+		
+		int length = removeDuplicate(arr);
+		System.out.println(length);
+		
 		System.out.print("[");
-		for(int i=0; i< arr.length;i++) {
+		for(int i= 0; i< length;i++) {
 			System.out.print(arr[i]);
-			if(i < arr.length - 1) {
+			if(i < length - 1) {
 				System.out.print(", ");
 			}
 		}
 		System.out.print("]");
-			
 		
-		
-		System.out.println(Arrays.toString(arr)); //second option
+		 
 			
 	}
 		
@@ -54,6 +58,7 @@ public class TwoPointers {
 	
 	/*
 	 * Remove duplicate using two pointers
+	 * Only works on sorted array*
 	 */
 	public static int removeDuplicate(int[] nums) {
 		if(nums.length == 0) {
@@ -62,7 +67,7 @@ public class TwoPointers {
 		
 		int i = 0;
 		
-		for(int j=1; j <nums.length;j++) {
+		for(int j=1; j < nums.length;j++) {
 			if(nums[j] != nums[i]) {
 				i++;
 				nums[i] = nums[j];
