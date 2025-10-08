@@ -34,6 +34,10 @@ public class TwoPointers {
 		}
 		System.out.print("]");
 		
+		System.out.println();
+		int[] nums = {1,2,3,4,5,6,7,8};
+		findPairs(nums,9);
+		
 		 
 			
 	}
@@ -73,6 +77,27 @@ public class TwoPointers {
 				nums[i] = nums[j];
 			}
 		} return i+1;
+	}
+	
+	public static void findPairs(int[] nums, int target) {
+		int left = 0;
+		int right = nums.length - 1;
+		
+		System.out.println("Pairs with sum "+target+":");
+		
+		while (left < right) {
+			int sum = nums[left] + nums[right];
+			
+			if(sum == target) {
+				System.out.println("("+nums[left] + ","+nums[right]+")");
+				left++;
+				right--;
+			}else if(sum < target) {
+				left++;
+			}else {
+				right--;
+			}
+		}
 	}
 	
 	
