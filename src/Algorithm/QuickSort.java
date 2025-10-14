@@ -4,8 +4,14 @@ import java.util.Arrays;
 
 public class QuickSort {
 
-	/*
+	/*quicksort - moves smaller elements to left of a pivot.
+	 * 			  recursively divide array in 2 partitions
 	 * 
+	 * run-time complexity = Best case 0(n log (n))
+	 * 						 Average case 0(n log(n))
+	 * 						 Worst case 0(n^2) if already sorted
+	 * 
+	 * space complexity    = 0(log(n)) due to recursion
 	 */
 	public static void main(String[] args) {
 		
