@@ -1,5 +1,6 @@
 package CoreConcepts;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class TwoPointers {
@@ -36,6 +37,7 @@ public class TwoPointers {
 		
 		System.out.println();
 		int[] nums = {1,2,3,4,5,6,7,8};
+		System.out.println("additional pairs are: "+Arrays.toString(nums));
 		findPairs(nums,9);
 		
 		 
@@ -50,14 +52,14 @@ public class TwoPointers {
 		int right = s.length()-1;
 		
 		while(left < right) {
-			if(s.charAt(left) != s.charAt(right)) {
+			if(s.charAt(left) != s.charAt(right)){
 				return false;
 			}else {
 				left++;
 				right--;
 			}
 		}
-		return true;	
+		return true;
 	}
 	
 	/*
@@ -65,6 +67,21 @@ public class TwoPointers {
 	 * Only works on sorted array*
 	 */
 	public static int removeDuplicate(int[] nums) {
+		
+		if(nums.length == 0) {
+			return 0;
+		}
+		
+		int i = 0;
+		
+		for(int j=1; j<nums.length;j++) {
+			if(nums[j] != nums[i]) {
+				i++;
+				nums[i] = nums[j];
+			}
+		}return i+1;
+		
+		/*
 		if(nums.length == 0) {
 			return 0;
 		}
@@ -76,10 +93,29 @@ public class TwoPointers {
 				i++;
 				nums[i] = nums[j];
 			}
-		} return i+1;
+		} return i+1; */
 	}
 	
 	public static void findPairs(int[] nums, int target) {
+		
+		int left = 0;
+		int right = nums.length-1;
+		
+		while(left<right) {
+			int sum = nums[left]+nums[right];
+			
+			if(sum == target) {
+				System.out.println("("+nums[left] + ","+nums[right]+")");
+				left++;
+				right--;
+			}else if(sum < target) {
+				left++;
+			}else {
+				right--;
+			}
+		}
+		
+		/*
 		int left = 0;
 		int right = nums.length - 1;
 		
@@ -97,7 +133,7 @@ public class TwoPointers {
 			}else {
 				right--;
 			}
-		}
+		}*/
 	}
 	
 	
