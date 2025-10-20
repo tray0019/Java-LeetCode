@@ -20,7 +20,7 @@ public class TwoPointers {
 		System.out.println("-----------------------------");
 		
 		int arr[] = {1,2,2,4,4,5};
-		System.out.println(Arrays.toString(arr));
+		System.out.println("Remove Duplicate: "+Arrays.toString(arr));
 		System.out.println();
 		
 		int length = removeDuplicate(arr);
@@ -38,7 +38,7 @@ public class TwoPointers {
 		System.out.println();
 		int[] nums = {1,2,3,4,5,6,7,8};
 		System.out.println("additional pairs are: "+Arrays.toString(nums));
-		findPairs(nums,9);
+		findPairs(nums,6);
 		
 		 
 			
@@ -48,6 +48,25 @@ public class TwoPointers {
 	 * Reads if word are same forwards and backwards
 	 */
 	public static boolean isPalindrome(String s) {
+		
+		int low = 0;
+		int high = s.length() - 1;
+		
+		while(low < high) {
+			if(s.charAt(low) != s.charAt(high)) {
+				return false;
+			}else {
+				low++;
+				high++;
+			}
+			
+			return true;
+			
+		}
+		return false;
+		
+		
+		/*
 		int left = 0;
 		int right = s.length()-1;
 		
@@ -59,7 +78,7 @@ public class TwoPointers {
 				right--;
 			}
 		}
-		return true;
+		return true; */
 	}
 	
 	/*
@@ -68,18 +87,19 @@ public class TwoPointers {
 	 */
 	public static int removeDuplicate(int[] nums) {
 		
-		if(nums.length == 0) {
+		if(nums.length == 0 ) {
 			return 0;
 		}
 		
 		int i = 0;
 		
-		for(int j=1; j<nums.length;j++) {
+		for(int j = 1; j < nums.length; j++) {
 			if(nums[j] != nums[i]) {
 				i++;
 				nums[i] = nums[j];
 			}
-		}return i+1;
+		}
+		return i+1;
 		
 		/*
 		if(nums.length == 0) {
@@ -96,22 +116,25 @@ public class TwoPointers {
 		} return i+1; */
 	}
 	
+	/*
+	 * Find target by adding pairs 
+	 */
 	public static void findPairs(int[] nums, int target) {
 		
 		int left = 0;
-		int right = nums.length-1;
+		int right = nums.length -1;
 		
 		while(left<right) {
-			int sum = nums[left]+nums[right];
+			int sum = nums[left] + nums[right];
 			
 			if(sum == target) {
-				System.out.println("("+nums[left] + ","+nums[right]+")");
+				System.out.println("("+nums[left]+","+nums[right]+")");
 				left++;
 				right--;
-			}else if(sum < target) {
-				left++;
+			}else if(sum > target) {
+				right--;
 			}else {
-				right--;
+				left++;
 			}
 		}
 		
