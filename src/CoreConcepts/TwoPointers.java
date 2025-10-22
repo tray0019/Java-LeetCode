@@ -49,23 +49,20 @@ public class TwoPointers {
 	 */
 	public static boolean isPalindrome(String s) {
 		
-		int low = 0;
-		int high = s.length() - 1;
 		
-		while(low < high) {
-			if(s.charAt(low) != s.charAt(high)) {
+		int left = 0;
+		int right = s.length()-1;
+		
+		while(left < right) {
+			if(s.charAt(left) != s.charAt(right)) {
 				return false;
 			}else {
-				low++;
-				high++;
+				left++;
+				right--;
 			}
-			
-			return true;
-			
 		}
-		return false;
-		
-		
+		return true;
+				
 		/*
 		int left = 0;
 		int right = s.length()-1;
@@ -87,19 +84,22 @@ public class TwoPointers {
 	 */
 	public static int removeDuplicate(int[] nums) {
 		
-		if(nums.length == 0 ) {
+		if(nums.length == 0) {
 			return 0;
 		}
 		
 		int i = 0;
-		
-		for(int j = 1; j < nums.length; j++) {
+		for(int j = 1; j<nums.length;j++) {
 			if(nums[j] != nums[i]) {
 				i++;
 				nums[i] = nums[j];
 			}
 		}
+		
 		return i+1;
+		
+		
+		
 		
 		/*
 		if(nums.length == 0) {
@@ -122,21 +122,28 @@ public class TwoPointers {
 	public static void findPairs(int[] nums, int target) {
 		
 		int left = 0;
-		int right = nums.length -1;
+		int right = nums.length-1;
 		
-		while(left<right) {
+		while(left < right) {
 			int sum = nums[left] + nums[right];
 			
 			if(sum == target) {
+				
 				System.out.println("("+nums[left]+","+nums[right]+")");
+				
 				left++;
 				right--;
-			}else if(sum > target) {
-				right--;
+			}else if(sum < target) {
+				
+				left++;
 			}else {
-				left++;
+				right--;
 			}
 		}
+		
+		
+		
+		
 		
 		/*
 		int left = 0;

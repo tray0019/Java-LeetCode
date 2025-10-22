@@ -26,7 +26,8 @@ public class ValidAnagram {
 		
 		Arrays.sort(sArray);
 		Arrays.sort(tArray);
-		
+		System.out.println(tArray);
+		System.out.println(sArray);
 	
 		return Arrays.equals(sArray, tArray);
 		

@@ -11,10 +11,11 @@ public class BinarySearch {
 		//					Half of the array is eliminated during each "step"
 		
 		int array[] = new int[9];
-		int target = 4;
+		int target = 7;
 		
 		for(int i = 0; i<array.length; i++) {
 			array[i] = i;
+			System.out.println(i+": "+array[i]);
 		}
 		
 		// int index = Arrays.binarySearch(array, target);
@@ -40,13 +41,15 @@ public class BinarySearch {
 				
 				if(value < target) {
 					low = middle +1;
-				}if(value > target) {
+				}else if(value > target) {
 					high = middle-1;
 				}else {
 					return middle;
 				}
 			}
 			return -1;
+			
+			
 	}
 	
 	
