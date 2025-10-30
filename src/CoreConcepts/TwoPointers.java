@@ -49,20 +49,21 @@ public class TwoPointers {
 	 */
 	public static boolean isPalindrome(String s) {
 		
-		
 		int left = 0;
-		int right = s.length()-1;
+		int right = s.length() - 1;
 		
 		while(left < right) {
+			
 			if(s.charAt(left) != s.charAt(right)) {
 				return false;
 			}else {
 				left++;
 				right--;
 			}
+			
 		}
 		return true;
-				
+			
 		/*
 		int left = 0;
 		int right = s.length()-1;
@@ -88,15 +89,24 @@ public class TwoPointers {
 			return 0;
 		}
 		
-		int i = 0;
-		for(int j = 1; j<nums.length;j++) {
-			if(nums[j] != nums[i]) {
-				i++;
-				nums[i] = nums[j];
+		int j = 0;
+		
+		for(int i = 0; i < nums.length; i++ ) {
+			if(nums[i] != nums[j]) {
+				j++;
+				nums[j] = nums[i];
 			}
 		}
 		
-		return i+1;
+		return j+1;
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -120,30 +130,31 @@ public class TwoPointers {
 	 * Find target by adding pairs 
 	 */
 	public static void findPairs(int[] nums, int target) {
+
+
+		int low = 0;
+		int high = nums.length - 1;
 		
-		int left = 0;
-		int right = nums.length-1;
 		
-		while(left < right) {
-			int sum = nums[left] + nums[right];
+		while(low < high) {
 			
-			if(sum == target) {
-				
-				System.out.println("("+nums[left]+","+nums[right]+")");
-				
-				left++;
-				right--;
-			}else if(sum < target) {
-				
-				left++;
+			int value = nums[low]+nums[high];
+			
+			if(value == target) {
+				System.out.println(nums[low] +" and "+nums[high]+" ="+value);
+				low++;
+				high--;
+			}else if(value > target){
+				high--;
 			}else {
-				right--;
+				low++;
 			}
 		}
-		
-		
-		
-		
+				
+	
+			
+			
+			
 		
 		/*
 		int left = 0;
