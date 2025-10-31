@@ -35,18 +35,23 @@ public class BinarySearch {
 			int low = 0;
 			int high = array.length-1;
 			
-			while(low<=high) {
-				int middle = (high+low)/2;
-				int value = array[middle];
+			
+			
+			while(low < high) {
 				
-				if(value < target) {
-					low = middle +1;
-				}else if(value > target) {
-					high = middle-1;
+				int value = (high+low)/2;
+				int middle = array[value];
+				
+				if(middle < target) {
+					low = middle + 1;
+				}else if(middle > target){
+					high = middle - 1;
 				}else {
 					return middle;
 				}
 			}
+			
+			
 			return -1;
 			
 			

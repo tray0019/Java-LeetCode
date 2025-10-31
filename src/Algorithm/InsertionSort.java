@@ -27,7 +27,7 @@ public class InsertionSort {
 	}
 
 	private static void testInsertionSort(int[] array) {
-		for(int i = 1; i < array.length;i++) {
+		for(int i = 1; i < array.length; i++) {
 			int temp = array[i];
 			int j = i-1;
 			
@@ -35,6 +35,7 @@ public class InsertionSort {
 				array[j+1] = array[j];
 				j--;
 			}
+			
 			array[j+1] = temp;
 		}
 	}
