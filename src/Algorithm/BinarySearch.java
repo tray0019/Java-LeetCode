@@ -32,31 +32,31 @@ public class BinarySearch {
 
 	private static int binarySearch(int[] array, int target) {
 			
-			int low = 0;
-			int high = array.length-1;
+		
+		int low = 0;
+		int high = array.length-1;
+		
+		
+		
+		
+		while(low < high) {
+			int middle = (low+high)/2;
+			int value = array[middle];
 			
-			
-			
-			while(low < high) {
-				
-				int value = (high+low)/2;
-				int middle = array[value];
-				
-				if(middle < target) {
-					low = middle + 1;
-				}else if(middle > target){
-					high = middle - 1;
-				}else {
-					return middle;
-				}
+			if( value > target) {
+				high = middle -1;
+			}else if(value < target) {
+				low = middle + 1;
+			}else {
+				return middle;
 			}
-			
-			
-			return -1;
-			
-			
-	}
-	
+		}
+		
+		return -1;
+		
+	}	
+		
+		
 	
 	
 	

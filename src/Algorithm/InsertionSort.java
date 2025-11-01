@@ -38,6 +38,10 @@ public class InsertionSort {
 			
 			array[j+1] = temp;
 		}
+		
+		
+		
+		
 	}
 	
 	private static void insertionSort(int[] array) {
