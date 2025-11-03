@@ -58,16 +58,11 @@ public class TwoPointers {
 			}else {
 				left++;
 				right--;
-				
 			}
-			
 		}
 		
-		
 		return true;
-		
-		
-			
+				
 		/*
 		int left = 0;
 		int right = s.length()-1;
@@ -89,21 +84,17 @@ public class TwoPointers {
 	 */
 	public static int removeDuplicate(int[] nums) {
 		
-		if(nums.length == 0) {
-			return 0;
-		}
-		
+
 		int j = 0;
 		
-		for(int i = 1; i<nums.length; i++) {
-			if(nums[i] != nums[j]) {
+		for(int i = 1; i < nums.length; i++) {
+			if(nums[j] != nums[i]) {
 				j++;
 				nums[j] = nums[i];
 			}
 		}
 		
 		return j+1;
-			
 		
 		/*
 		if(nums.length == 0) {
@@ -128,33 +119,18 @@ public class TwoPointers {
 		int low = 0;
 		int high = nums.length-1;
 		
-
 		while(low < high) {
-			
-
 			int sum = nums[low]+nums[high];
-			
 			if(sum == target) {
-				System.out.println(nums[low]+ " && "+nums[high]);
+				System.out.println("("+nums[low]+","+nums[high]+")");
 				low++;
 				high--;
-			}else if(sum > target){
+			}else if(sum>target){
 				high--;
 			}else {
-				low++;
+				low--;
 			}
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-	
-		
-		
 		
 		/*
 		int left = 0;
