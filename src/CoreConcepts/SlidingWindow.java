@@ -17,29 +17,59 @@ public class SlidingWindow {
 	private static int findMaxSum(int[] arr, int k) {
 		
 		int windowSum = 0;
+		int maxSum;
+		
+		for(int i = 0; i < k; i++) {
+			windowSum += arr[i];
+		}
+		
+		maxSum = windowSum;
+		
+		for(int i = k; i < arr.length; i++) {
+			windowSum += arr[i] - arr[i-k];
+			maxSum = Math.max(maxSum, windowSum);
+		}
+		
+		return maxSum;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
+		int windowSum = 0;
 		int maxSum = 0;
 		
 		for(int i = 0; i<k;i++) {
 			windowSum += arr[i];
-			System.out.println(i+": "+windowSum);
-			System.out.println();
 		}
-		
+		//[2, 1, 5, 1, 3, 2]
 		maxSum = windowSum;
-		System.out.println("Max Sum: "+maxSum);
-		//System.out.println("Window Sum: "+windowSum);
 		for(int i = k; i<arr.length;i++) {
-			// 8 = 8 + 1 - 0 
-			System.out.println(arr[i] +" | "+arr[i-k]+ " "+ i + " | "+ arr[k]);
-			windowSum += arr[i] - arr[i-k];
-			System.out.println(i+": "+windowSum);
+			windowSum += arr[i] - arr[i-k];//8 = 8+1-[3-3 = 0 [2]]
 			maxSum = Math.max(maxSum, windowSum);
-			System.out.println(maxSum);
 		}
 		return maxSum;
-		
+		*/
 	}
-	
-	
 
 }
