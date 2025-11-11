@@ -16,21 +16,26 @@ public class SlidingWindow {
 	}
 	private static int findMaxSum(int[] arr, int k) {
 		
-		int windowSum = 0;
+		
+		int slideSum = 0;
 		int maxSum;
 		
-		for(int i = 0; i < k; i++) {
-			windowSum += arr[i];
+		for(int i = 0; i < k;i++) {
+			slideSum += arr[i];
 		}
 		
-		maxSum = windowSum;
+		maxSum = slideSum;
 		
-		for(int i = k; i < arr.length; i++) {
-			windowSum += arr[i] - arr[i-k];
-			maxSum = Math.max(maxSum, windowSum);
+		for(int j = k; j < arr.length; j++ ) {
+			slideSum += arr[j] - arr[j-k];
+			maxSum = Math.max(maxSum, slideSum);		
 		}
+		
 		
 		return maxSum;
+		
+
+		
 		
 		
 		
