@@ -20,19 +20,23 @@ public class SlidingWindow {
 		int slideSum = 0;
 		int maxSum;
 		
-		for(int i = 0; i < k;i++) {
+		for(int i = 0; i < k; i++) {
 			slideSum += arr[i];
+			//System.out.println(slideSum);
 		}
 		
 		maxSum = slideSum;
 		
-		for(int j = k; j < arr.length; j++ ) {
-			slideSum += arr[j] - arr[j-k];
-			maxSum = Math.max(maxSum, slideSum);		
+		for(int i = k; i < arr.length; i++) {
+			slideSum += arr[i]-arr[i-k];
+			maxSum = Math.max(maxSum, slideSum);
 		}
 		
-		
 		return maxSum;
+		
+
+
+		
 		
 
 		

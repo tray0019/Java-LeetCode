@@ -26,22 +26,27 @@ public class InsertionSort {
 		System.out.println(Arrays.toString(array));
 	}
 
-	private static void testInsertionSort(int[] array) {
+	private static void testInsertionSort(int[] arr) {
 		
 		//[9, 1, 8, 2, 7, 3, 7, 4, 6, 5]
-		
-		for(int i = 1; i < array.length; i++) {
-			int temp = array[i];
-			int j = i-1;//same mistake lol
+		for(int i = 1; i < arr.length; i++) {
+			int temp = arr[i];
+			int j = i-1;
 			
-			while(j>=0 && array[j] > temp) {
-				array[j+1] = array[j];
+			while(j >= 0 && arr[j] > temp) {
+				arr[j+1] = arr[j];
 				j--;
 			}
 			
-			array[j+1] = temp;
+			arr[j+1] = temp;
 			
 		}
+		
+
+
+		
+		
+		
 		
 		
 		

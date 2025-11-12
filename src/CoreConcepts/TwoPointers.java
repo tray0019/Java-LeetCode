@@ -12,7 +12,7 @@ public class TwoPointers {
 	public static void main(String[] args) {
 		
 		boolean test1 = isPalindrome("end");
-		boolean test2 = isPalindrome("mom");
+		boolean test2 = isPalindrome("momom");
 		
 		System.out.println("isPalindrome method practice");
 		System.out.println("Is end a palindrome? "+test1);
@@ -38,6 +38,7 @@ public class TwoPointers {
 		System.out.println();
 		int[] nums = {1,2,3,4,5,6,7,8};
 		System.out.println("additional pairs are: "+Arrays.toString(nums));
+		System.out.println("Find paris for " + 6);
 		findPairs(nums,6);
 		
 		 
@@ -52,16 +53,34 @@ public class TwoPointers {
 		int left = 0;
 		int right = s.length()-1;
 		
-		while(left < right) {
+		while(left<right) {
+			
 			if(s.charAt(left) != s.charAt(right)) {
 				return false;
 			}else {
 				left++;
 				right--;
 			}
+			
 		}
 		
 		return true;
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 				
 		/*
 		int left = 0;
@@ -82,20 +101,28 @@ public class TwoPointers {
 	 * Remove duplicate using two pointers
 	 * Only works on sorted array*
 	 */
-	public static int removeDuplicate(int[] nums) {
+	public static int removeDuplicate(int[] arr) {
 		
-
+		
+		if(arr.length == 0) {
+			return 0;
+		}
+		
 		int j = 0;
 		
-		for(int i = 1; i < nums.length; i++) {
-			if(nums[j] != nums[i]) {
+		for(int i = 1; i < arr.length; i++) {
+			if(arr[i] != arr[j]) {
 				j++;
-				nums[j] = nums[i];
+				arr[j] = arr[i];
+				
 			}
 		}
 		
+		
 		return j+1;
 		
+			
+					
 		/*
 		if(nums.length == 0) {
 			return 0;
@@ -114,23 +141,40 @@ public class TwoPointers {
 	/*
 	 * Find target by adding pairs 
 	 */
-	public static void findPairs(int[] nums, int target) {
+	public static void findPairs(int[] arr, int target) {
 
 		int low = 0;
-		int high = nums.length-1;
+		int high = arr.length-1;
 		
 		while(low < high) {
-			int sum = nums[low]+nums[high];
+			
+			int sum = arr[low] + arr[high];
+			
 			if(sum == target) {
-				System.out.println("("+nums[low]+","+nums[high]+")");
+				System.out.println("( "+arr[low]+","+arr[high]+" )");
 				low++;
 				high--;
-			}else if(sum>target){
+			}else if(sum > target) {
 				high--;
 			}else {
 				low--;
 			}
 		}
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		/*
 		int left = 0;
