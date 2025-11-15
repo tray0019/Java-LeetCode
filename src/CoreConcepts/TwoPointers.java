@@ -12,14 +12,14 @@ public class TwoPointers {
 	public static void main(String[] args) {
 		
 		boolean test1 = isPalindrome("end");
-		boolean test2 = isPalindrome("momom");
+		boolean test2 = isPalindrome("mom");
 		
 		System.out.println("isPalindrome method practice");
 		System.out.println("Is end a palindrome? "+test1);
 		System.out.println("Is mom a palindrome? "+test2);
 		System.out.println("-----------------------------");
 		
-		int arr[] = {1,2,2,4,4,5};
+		int arr[] = {1,2,2,4,4,5,7,8,9,9};
 		System.out.println("Remove Duplicate: "+Arrays.toString(arr));
 		System.out.println();
 		
@@ -53,19 +53,19 @@ public class TwoPointers {
 		int left = 0;
 		int right = s.length()-1;
 		
-		while(left<right) {
-			
+		while(left < right) {
 			if(s.charAt(left) != s.charAt(right)) {
 				return false;
 			}else {
 				left++;
 				right--;
 			}
-			
 		}
 		
+		
 		return true;
-
+		
+		
 
 		
 		
@@ -108,18 +108,18 @@ public class TwoPointers {
 			return 0;
 		}
 		
-		int j = 0;
+		int i = 0;
 		
-		for(int i = 1; i < arr.length; i++) {
+		for(int j = 1; j < arr.length; j++) {
 			if(arr[i] != arr[j]) {
-				j++;
-				arr[j] = arr[i];
-				
+				i++;
+				arr[i] = arr[j];
 			}
 		}
 		
+		return i+1;
 		
-		return j+1;
+		
 		
 			
 					
@@ -144,14 +144,13 @@ public class TwoPointers {
 	public static void findPairs(int[] arr, int target) {
 
 		int low = 0;
-		int high = arr.length-1;
+		int high = arr.length -1;
 		
 		while(low < high) {
-			
 			int sum = arr[low] + arr[high];
 			
 			if(sum == target) {
-				System.out.println("( "+arr[low]+","+arr[high]+" )");
+				System.out.println("("+arr[low]+","+arr[high]+")");
 				low++;
 				high--;
 			}else if(sum > target) {
@@ -159,7 +158,9 @@ public class TwoPointers {
 			}else {
 				low--;
 			}
+			
 		}
+		
 
 
 		

@@ -29,13 +29,15 @@ public class InsertionSort {
 	private static void testInsertionSort(int[] arr) {
 		
 		//[9, 1, 8, 2, 7, 3, 7, 4, 6, 5]
+		
 		for(int i = 1; i < arr.length; i++) {
+			
 			int temp = arr[i];
 			int j = i-1;
 			
-			while(j >= 0 && arr[j] > temp) {
-				arr[j+1] = arr[j];
-				j--;
+			while(j >= 0 && arr[j] > temp ) {
+				 	arr[j+1] = arr[j];
+				 	j--;
 			}
 			
 			arr[j+1] = temp;

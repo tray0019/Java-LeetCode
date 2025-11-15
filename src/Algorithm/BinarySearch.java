@@ -11,8 +11,8 @@ public class BinarySearch {
 		//					Half of the array is eliminated during each "step"
 		
 		int array[] = new int[9];
-		int target = 3;
-		
+		int target = 7;
+		System.out.println("Target is: "+ target);
 		for(int i = 0; i<array.length; i++) {
 			array[i] = i;
 			System.out.println(i+": "+array[i]);
@@ -32,30 +32,27 @@ public class BinarySearch {
 
 	private static int binarySearch(int[] arr, int target) {
 		
-		
 		int low = 0;
-		int high = arr.length - 1;
+		int high = arr.length-1;
 		
 		while(low <= high) {
 			
-			int half = (low+high)/2;
-			System.out.println("half --"+ half);
-			int value = arr[half];
+			int mid = (low+high)/2;
+			int value = arr[mid];
 			
 			if(value > target) {
-				
-				high = half - 1;
-				System.out.println(high+"--- --");
+				high = mid - 1;
 			}else if(value < target) {
-				low = half + 1;
-				System.out.println(low+"--- --");
+				low = mid + 1;
 			}else {
-				return half;
+				return value;
 			}
 			
 			
 		}
-		return -1;		
+		return -1;
+		
+		
 		
 	}	
 		
