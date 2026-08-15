@@ -7,7 +7,7 @@ public class LongestSubString {
 
 	public static void main(String[] args) {
 		
-		   String s = "abczzabcbadefg";
+		   String s = "abzzabcccbadefg";
 	       int result = lengthOfLongestSubstring(s);
 	       System.out.println("Length of longest substring without \nrepeating characters: " + result);
 	    
@@ -28,6 +28,7 @@ public class LongestSubString {
 			
 			while(windows.contains(c)) {
 				System.out.println(right+": "+c+" | "+windows.contains(c));
+				System.out.println("remove: "+windows.remove(s.charAt(left)));
 				windows.remove(s.charAt(left));
 				
 				left++;
