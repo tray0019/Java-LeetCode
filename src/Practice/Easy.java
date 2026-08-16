@@ -7,9 +7,15 @@ public class Easy {
 	/**
 	 * @param args
 	 */
+	/**
+	 * @param args
+	 */
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		
-		int target = 4;
+		int target = 6;
 		
 		int[] nums4 = {4, 4, 2, 4, 7};
 		int[] nums0 = {};
@@ -22,10 +28,14 @@ public class Easy {
 		countEven(nums2);
 		findLargest(nums);
 
-System.out.println("countOccurrences: "+countOccurrences(nums0,target));
+System.out.println("countOccurrences: "+countOccurrences(nums,target));
+System.out.println("findFirstIndex: "+findFirstIndex(nums2,target));
+System.out.println("reverseString: "+reverseString("CAt"));
+System.out.println("reverseString2: "+reverseString2("hello"));
+System.out.println("isPalindrome: "+isPalindrome("hoh"));
+
 		
-		
-		
+
 		
 
 	}
@@ -106,6 +116,57 @@ System.out.println("countOccurrences: "+countOccurrences(nums0,target));
 		}
 		
 		return count;
+
+	}
+	
+	public static int findFirstIndex(int[] nums, int target) {
+		for(int i=0; i<nums.length; i++) {
+			if(nums[i] == target) {
+				return i;
+			}
+		}
+		
+		return -1;
+
+	}
+	
+	public static String reverseString(String text) {
+		
+		String reversed = "";
+		
+		for(int i = text.length()-1; i>=0; i--) {
+			reversed = reversed + text.charAt(i);
+		}
+		
+		return reversed;
+
+	}
+	
+	public static String reverseString2(String text) {
+		StringBuilder reverse = new StringBuilder();
+		
+		for(int i = text.length()-1;i>=0;i--) {
+			reverse.append(text.charAt(i));
+		}
+		
+		return reverse.toString();
+	}
+	
+	public static boolean isPalindrome(String text) {
+
+		int left = 0;
+		int right = text.length()-1;
+		
+		while(left<right) {
+			if(text.charAt(left)!= text.charAt(right)) {
+				return false;
+			}
+			
+			left++;
+			right--;
+		}
+		
+		return true;
 
 	}
 
