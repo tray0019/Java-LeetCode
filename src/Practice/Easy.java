@@ -1,5 +1,7 @@
 package Practice;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class Easy {
@@ -19,26 +21,24 @@ public class Easy {
 		
 		int[] nums4 = {4, 4, 2, 4, 7};
 		int[] nums0 = {};
-		int[] nums = {2, 5, 2, 7, 2};
+		int[] nums = {4, 5, 3, 8,6};
 		int[] nums2 = {2, 3, 6, 9, 10};
 		int[] nums3 = {-8, -3, -12, -5};
 		
-		containsDuplicate(nums);
-		hashSetContainsDuplicate(nums);
-		countEven(nums2);
-		findLargest(nums);
-
-System.out.println("countOccurrences: "+countOccurrences(nums,target));
-System.out.println("findFirstIndex: "+findFirstIndex(nums2,target));
-System.out.println("reverseString: "+reverseString("CAt"));
-System.out.println("reverseString2: "+reverseString2("hello"));
-System.out.println("isPalindrome: "+isPalindrome("hoh"));
-System.out.println("twoSum: "+twoSum(nums,7));
-
-
+		System.out.println("containsDuplicate:        "+containsDuplicate(nums));
+		System.out.println("hashSetContainsDuplicate: "+hashSetContainsDuplicate(nums));
+		System.out.println("countEven:                "+countEven(nums2));
+		System.out.println("findLargest:              "+findLargest(nums));
+		System.out.println("countOccurrences: 	  "+countOccurrences(nums,target));
+		System.out.println("findFirstIndex: 	  "+findFirstIndex(nums2,target));
+		System.out.println("reverseString: 		  "+reverseString("CAt"));
+		System.out.println("reverseString2: 	  "+reverseString2("hello"));
+		System.out.println("isPalindrome: 		  "+isPalindrome("hoh"));
+		System.out.println("twoSum: 		  "+Arrays.toString(twoSum(nums,7)) );
+		System.out.println("twoSumHashMap: 		  "+Arrays.toString( twoSumHashMap(nums,10)));
+		System.out.println("buildFrequencyMap: "+buildFrequencyMap(nums4));
 
 		
-
 	}
 	
 	public static boolean containsDuplicate(int[] nums) {
@@ -47,12 +47,12 @@ System.out.println("twoSum: "+twoSum(nums,7));
 			for(int j = i+1; j < nums.length; j++) {
 				
 				if(nums[i] == nums[j]) {
-					System.out.println("containsDuplicate: true");
+					//System.out.println("containsDuplicate: true");
 					return true;
 				}
 			}
 		}
-		System.out.println("containsDuplicate: false");
+		//System.out.println("containsDuplicate: false");
 		return false;
 	}
 	
@@ -64,7 +64,7 @@ System.out.println("twoSum: "+twoSum(nums,7));
 		for (int i = 0; i <nums.length; i++) {
 			
 			if(seen.contains(nums[i])) {
-				System.out.println("hashetContainDuplicate: true");
+				//System.out.println("hashetContainDuplicate: true");
 				
 				return true;
 			}
@@ -72,7 +72,7 @@ System.out.println("twoSum: "+twoSum(nums,7));
 			seen.add(nums[i]);
 		}
 		
-		System.out.println("hashetContainDuplicate: false");
+		//System.out.println("hashetContainDuplicate: false");
 		return false;
 	}
 	
@@ -82,12 +82,12 @@ System.out.println("twoSum: "+twoSum(nums,7));
 		
 		for(int i = 0; i < nums.length; i++) {
 			if(nums[i] % 2 == 0) {
-				System.out.println(nums[i] % 2 == 0);
+				//System.out.println(nums[i] % 2 == 0);
 				evenNumber = evenNumber+1;
 			}
 		}
 		
-		System.out.println(evenNumber);
+		//System.out.println(evenNumber);
 		
 		return evenNumber;
 	}
@@ -103,7 +103,7 @@ System.out.println("twoSum: "+twoSum(nums,7));
 			}
 		}
 		
-		System.out.println(largest);
+		//System.out.println(largest);
 		return largest;
 	}
 	
@@ -176,7 +176,7 @@ System.out.println("twoSum: "+twoSum(nums,7));
 		for(int i = 0; i < nums.length; i++) {
 			for(int j = i+1; j<nums.length; j++) {
 				if(nums[i]+nums[j] == target) {
-					System.out.println(nums[i]+" + "+nums[j]+" = "+target);
+					//System.out.println(nums[i]+" + "+nums[j]+" = "+target);
 					return new int[] {i,j};
 					
 				}
@@ -184,9 +184,45 @@ System.out.println("twoSum: "+twoSum(nums,7));
 		}
 		
 		return new int[] {};
-		
-		
 
 	}
+	
+	public static int[] twoSumHashMap(int[] nums, int target) {
+
+	    HashMap<Integer, Integer> seen = new HashMap<>();
+
+	    for (int i = 0; i < nums.length; i++) {
+
+	        int complement = target - nums[i];
+	        if (seen.containsKey(complement)) {
+	            return new int[] {seen.get(complement), i};
+	        }
+	        
+	        seen.put(nums[i], i);
+	    }
+
+	    return new int[] {};
+	}
+	
+	public static HashMap<Integer, Integer> buildFrequencyMap(int[] nums) {
+		
+		HashMap<Integer,Integer> counts = new HashMap<>();
+		
+		for(int i = 0; i < nums.length; i++) {
+			if(counts.containsKey(nums[i])) {
+				counts.put(nums[i], counts.get(nums[i])+1);
+			}else {
+				counts.put(nums[i],1);
+				System.out.println(counts);
+			}
+		}
+		
+		
+		return counts;
+
+		
+	}
+	
+	
 
 }
