@@ -24,6 +24,7 @@ public class Easy {
 		int[] nums = {4, 5, 3, 8,6};
 		int[] nums2 = {2, 3, 6, 9, 10};
 		int[] nums3 = {-8, -3, -12, -5};
+		int[] nums5 = {2, 2, 3, 3, 3, 4};
 		
 		System.out.println("containsDuplicate:        "+containsDuplicate(nums));
 		System.out.println("hashSetContainsDuplicate: "+hashSetContainsDuplicate(nums));
@@ -37,6 +38,7 @@ public class Easy {
 		System.out.println("twoSum: 		  "+Arrays.toString(twoSum(nums,7)) );
 		System.out.println("twoSumHashMap: 		  "+Arrays.toString( twoSumHashMap(nums,10)));
 		System.out.println("buildFrequencyMap: "+buildFrequencyMap(nums4));
+		System.out.println("mostFrequent: "+mostFrequent(nums4));
 
 		
 	}
@@ -211,9 +213,10 @@ public class Easy {
 		for(int i = 0; i < nums.length; i++) {
 			if(counts.containsKey(nums[i])) {
 				counts.put(nums[i], counts.get(nums[i])+1);
+				
 			}else {
+				
 				counts.put(nums[i],1);
-				System.out.println(counts);
 			}
 		}
 		
@@ -221,6 +224,35 @@ public class Easy {
 		return counts;
 
 		
+	}
+	
+	//nums = {2, 2, 3, 3, 3, 4};
+	public static int mostFrequent(int[] nums) {
+
+	    HashMap<Integer, Integer> counts = new HashMap<>();
+
+	    // first loop: build frequency map
+	    for(int i = 0; i < nums.length; i++) {
+	    	if(counts.containsKey(nums[i])) {
+	    		counts.put(nums[i], counts.get(nums[i])+1);
+	    	}else {
+	    		counts.put(nums[i], 1);
+	    	}
+	    }
+	    
+	    
+	    int mostFrequent = nums[0];
+	    int maxCount = 0;
+
+	    // second loop: find highest frequency
+	    for(int j = 0;j<nums.length;j++) {
+	    	if(counts.get(nums[j])>maxCount) {
+	    		mostFrequent = nums[j];
+	    		maxCount = counts.get(nums[j]);
+	    	}
+	    }
+
+	    return mostFrequent;
 	}
 	
 	
